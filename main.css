@@ -19,8 +19,24 @@
 * {
 	margin: 0;
 	padding: 0;
+	outline: 0;
+    border: 0;
+	appearance: none;
+    text-decoration: none;
+    list-style: none;
 	box-sizing: border-box;
 	font-family: 'montserrat', sans-serif;
+}
+
+html{
+    font-size: 12px;
+	max-height:100vh;
+  	overflow:hidden;
+}
+
+body {
+	min-height: 100vh;
+	background: linear-gradient(to top right, #80cbc4, #e1bee7, #80ddea, #d1c4e9);
 }
 
 input:not([type="radio"]):not([type="checkbox"]), button {
@@ -32,10 +48,66 @@ input:not([type="radio"]):not([type="checkbox"]), button {
 }
 /* End of Resets */
 
-body {
-	background: var(--light);
-	color: var(--dark);
+
+
+/* ============= ASIDE & SIDEBAR ============= */
+main{
+    display: grid;
+    grid-template-columns: 16rem auto 30rem;
+    gap: 2rem;
+	width: 100%;
+    margin: 1rem auto 4rem;
 }
+
+main aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 88vh;
+}
+
+main aside .sidebar{
+    padding-top: 40px;
+	width: 200px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+	box-shadow: 5px 7px 10px rgba(0, 0, 0, .5);
+	
+}
+
+main aside .sidebar a{
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    height: 4.2rem;
+	color: var(--grey);
+    position: relative;
+	padding: 10px 30px;/* ToDo: Remember to remove this when replacing that empty space with logos */
+	transition: .5s ease;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 60px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+main aside .sidebar a:hover{
+	background: rgba(0, 0, 0, 0.3);
+	color: #fff;
+}
+
+/* ============= END ASIDE & SIDEBAR ============= */
+
+
+.midsecton {
+	width: 100%;
+	margin-left: 200px;
+}
+
+
+/* End Nav Bar section */
 
 section {
 	margin-top: 2rem;
