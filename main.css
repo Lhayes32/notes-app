@@ -36,7 +36,8 @@ html{
 
 body {
 	min-height: 100vh;
-	background: linear-gradient(to top right, #80cbc4, #e1bee7, #80ddea, #d1c4e9);
+	/* background: linear-gradient(to top right, #80cbc4, #e1bee7, #80ddea, #d1c4e9); */
+	background-color: #F9F6EE;
 }
 
 input:not([type="radio"]):not([type="checkbox"]), button {
