@@ -128,3 +128,11 @@ function DisplayTodos () {
 
 	})
 }
+
+document.querySelectorAll(".category").forEach(function(category){
+	category.addEventListener("click", function(e){
+		if(e.target.parentNode.children.length > 1){
+			e.target.parentNode.classList.toggle("active");
+		}
+	});
+})

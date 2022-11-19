@@ -2,6 +2,7 @@
 :root {
 	--primary: #EA40A4;
 	--business: #3a82ee;
+	--calandar: #50C878;
 	--personal: var(--primary);
 	--light: #EEE;
 	--grey: #888;
@@ -12,6 +13,7 @@
 
 	--business-glow: 0px 0px 4px rgba(58, 130, 238, 0.75);
 	--personal-glow: 0px 0px 4px rgba(234, 64, 164, 0.75);
+	--calandar-glow: 0px 0px 4px rgba(80, 200, 120, 0.75);
 }
 /* End of Variables */
 
@@ -37,7 +39,7 @@ html{
 body {
 	min-height: 100vh;
 	/* background: linear-gradient(to top right, #80cbc4, #e1bee7, #80ddea, #d1c4e9); */
-	background-color: #F9F6EE;
+	background-color: #FAF9F6;
 }
 
 input:not([type="radio"]):not([type="checkbox"]), button {
@@ -76,17 +78,19 @@ main aside .sidebar{
 	background: rgba(0, 0, 0, 0.1);
 	border-radius: 10px;
 	box-shadow: 5px 7px 10px rgba(0, 0, 0, .5);
-	
 }
 
-main aside .sidebar a{
+main aside .sidebar .category {
+	margin: 10px 0px;
+}
+
+main aside .sidebar .main-category{
     display: flex;
     align-items: center;
     gap: 1.2rem;
     height: 4.2rem;
-	color: var(--grey);
     position: relative;
-	padding: 10px 30px;/* ToDo: Remember to remove this when replacing that empty space with logos */
+	margin-left: 10px;
 	transition: .5s ease;
 	font-size: 18px;
 	font-weight: 500;
@@ -94,10 +98,68 @@ main aside .sidebar a{
 	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-main aside .sidebar a:hover{
-	background: rgba(0, 0, 0, 0.3);
-	color: #fff;
+main aside .sidebar .main-category.notes {
+	color: var(--business);
 }
+
+main aside .sidebar .main-category.lists {
+	color: var(--personal);
+}
+
+main aside .sidebar .main-category.calandar {
+	color: var(--calandar);
+}
+
+main aside .sidebar .main-category .category-bullet {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 20px;
+	height: 20px;
+	border-radius: 999px;
+	
+}
+
+main aside .sidebar .main-category .category-bullet.notes {
+	border: 2px solid var(--business);
+	box-shadow: var(--business-glow);
+}
+
+main aside .sidebar .main-category .category-bullet.lists {
+	border: 2px solid var(--personal);
+	box-shadow: var(--personal-glow);
+}
+
+main aside .sidebar .main-category .category-bullet.calandar {
+	border: 2px solid var(--calandar);
+	box-shadow: var(--calandar-glow);
+}
+
+main aside .sidebar .category .sub-menu {
+	margin-left: 20px;
+	padding-left: 10px;
+	border-left: 1px solid #bbb;
+	max-height: 0px;
+	overflow: hidden;
+	transition: max-height 300ms ease-in-out;
+}
+
+main aside .sidebar .category.active .sub-menu {
+	max-height: 500px
+}
+
+main aside .sidebar .category .sub-menu a {
+	text-decoration: none;
+	display: block;
+	padding: 5px;
+	margin: 5px 0px;
+	color: #222;
+	cursor: pointer;
+
+}
+
+
+
 
 /* ============= END ASIDE & SIDEBAR ============= */
 
